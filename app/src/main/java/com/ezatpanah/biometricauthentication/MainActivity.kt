@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
                     super.onAuthenticationSucceeded(result)
                     Toast.makeText(applicationContext,
                         "Authentication succeeded!", Toast.LENGTH_SHORT)
+                        "Authentication succeeded!", Toast.LENGTH_SHORT
                         .show()
                 }
 
@@ -102,7 +103,6 @@ class MainActivity : AppCompatActivity() {
 
             }
             BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED -> {
-                // Prompts the user to create credentials that your app accepts.
                 val enrollIntent = Intent(Settings.ACTION_BIOMETRIC_ENROLL).apply {
                     putExtra(Settings.EXTRA_BIOMETRIC_AUTHENTICATORS_ALLOWED,
                         BIOMETRIC_STRONG or DEVICE_CREDENTIAL)
